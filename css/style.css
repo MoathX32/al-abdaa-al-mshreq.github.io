@@ -322,7 +322,7 @@ a.service-card-link {
 /* UPDATED HOVER EFFECT */
 .service-card:hover {
     transform: translateY(-10px);
-    background: var(--secondary-color); /* Fill with blue on hover */
+    background: var(--primary-color); /* Fill with blue on hover */
     color: var(--white); /* Change text to white */
     border-color: var(--accent-color); /* Add a gold border */
 }
