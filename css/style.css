@@ -179,7 +179,7 @@ nav ul li a:hover, nav ul li a.active {
 
 /* Hero Section */
 .hero {
-    background: linear-gradient(rgba(255, 255, 255, 0.51), rgba(255, 255, 255, 0.515)), url('./images/construction-bg.jpg') no-repeat center center/cover;
+    background: linear-gradient(rgba(255, 255, 255, 0.51), rgba(255, 255, 255, 0.515)), url('images/construction-bg.jpg') no-repeat center center/cover;
     color: var(--secondary-color);
     text-align: left;
     padding: 120px 0;
