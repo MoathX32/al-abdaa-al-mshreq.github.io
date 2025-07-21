@@ -15,33 +15,31 @@
 <body>
     <header>
         <div class="container">
-                <a href="index.html" class="logo">
-                    <img src="images/logo.png" alt="AL-ABDAA AL-MSHREQ Logo">
-                    <div class="logo-text-group">
-                        <span class="amc">AMC</span>
-                        <div class="divider"></div>
-                        <div class="full-name">
-                            <h1 data-key="companyName">AL-ABDAA AL-MSHREQ</h1>
-                            <p data-key="companySub">Building Contracting L.L.C</p>
-                        </div>
+            <a href="index.html" class="logo">
+                <img src="images/logo.png" alt="AL-ABDAA AL-MSHREQ Logo">
+                <div class="logo-text-group">
+                    <span class="amc">AMC</span>
+                    <div class="divider"></div>
+                    <div class="full-name">
+                    <h1>AL-ABDAA AL-MSHREQ</h1>
+                    <p>Building Contracting L.L.C</p>
                     </div>
-                </a>
+                </div>
+            </a>   
             <nav>
-                <ul>
+            <ul class="main-nav">
                     <li><a href="index.html">Home</a></li>
                     <li><a href="about.html" class="active">About Us</a></li>
                     <li><a href="services.html">Services</a></li>
                     <li><a href="projects.html">Projects</a></li>
                     <li><a href="gallery.html">Gallery</a></li>
                     <li><a href="contact.html">Contact</a></li>
-                    <li><a href="license.html">License</a></li>
-                </ul>
+                    <li><a href="careers.html">Careers</a></li>
+            </ul>
             </nav>
-            <div class="mobile-menu">
-                <i class="fas fa-bars"></i>
-            </div>
+            <div class="mobile-menu"><i class="fas fa-bars"></i></div>
         </div>
-    </header>
+</header>
 
     <main>
         <section class="page-header">
@@ -56,11 +54,11 @@
                 <div class="content-split">
                     <div class="content-split-image">
                         <img src="images/about-story.jpg" alt="City Skyline">
-                    </div>
+        </div>
                     <div class="content-split-text">
                         <h2>Our Story</h2>
                         <p>At AL-ABDAA AL-MSHREQ, we don't just build structures; we create lasting legacies. Our journey began many years ago, fueled by a passion for construction excellence and a commitment to transforming visions into reality. With a foundation laid on integrity and innovation, we've been shaping skylines and communities, dedicated to delivering projects that exceed expectations, on time and within budget.</p>
-                    </div>
+</div>
                 </div>
             </div>
         </section>
@@ -79,7 +77,7 @@
                 </div>
             </div>
         </section>
-        
+
         <section class="team light-bg">
             <div class="container">
                 <h2>Meet Our Team</h2>
@@ -132,7 +130,8 @@
                         <li><a href="services.html">Services</a></li>
                         <li><a href="projects.html">Projects</a></li>
                         <li><a href="gallery.html">Gallery</a></li>
-                        <li><a href="license.html">Trade License</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="careers.html">Careers</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
@@ -147,10 +146,27 @@
             </div>
         </div>
     </footer>
-    <script src="js/main.js"></script>
-    <!-- ADD THIS LINE BEFORE THE CLOSING </body> TAG -->
-    <a href="https://wa.me/971565547397" class="whatsapp-float" target="_blank">
-        <i class="fab fa-whatsapp"></i>
+    <!-- REPLACE the old floating buttons with this new structure in ALL .html files -->
+    <!-- Consolidated Social Media Button -->
+    <div class="social-float-container">
+        <div class="social-links-wrapper">
+        <a href="https://wa.me/971565547397" class="social-link whatsapp-link" target="_blank" aria-label="WhatsApp">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+        <a href="https://www.linkedin.com/company/al-abdaa-al-mshreq/" class="social-link linkedin-link" target="_blank" aria-label="LinkedIn">
+                <i class="fab fa-linkedin-in"></i>
+            </a>
+        <a href="https://www.facebook.com/ALABDAAALMSHREQ/" class="social-link facebook-link" target="_blank" aria-label="Facebook">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+        <a href="https://www.instagram.com/al_abdaa_al_mshreq/" class="social-link instagram-link" target="_blank" aria-label="Instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+        </div>
+    <a href="#" class="social-toggle-btn">
+        <i class="fas fa-share-alt"></i>
     </a>
+</div>
+<script src="js/main.js"></script>
 </body>
 </html>

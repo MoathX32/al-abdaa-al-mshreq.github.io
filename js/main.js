@@ -1,48 +1,27 @@
-document.addEventListener('DOMContentLoaded', function() {
-    // Mobile Menu Toggle
+document.addEventListener('DOMContentLoaded', () => {
+
+    // === Mobile Menu Toggle ===
     const mobileMenuBtn = document.querySelector('.mobile-menu');
-    const navMenu = document.querySelector('nav ul');
-    
+    const navMenu = document.querySelector('.main-nav');
+
     if (mobileMenuBtn && navMenu) {
-        mobileMenuBtn.addEventListener('click', function() {
+        mobileMenuBtn.addEventListener('click', () => {
             navMenu.classList.toggle('show');
         });
     }
 
-    // Smooth scrolling for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            e.preventDefault();
-            const targetElement = document.querySelector(this.getAttribute('href'));
-            if (targetElement) {
-                window.scrollTo({
-                    top: targetElement.offsetTop - 70, // Adjust for header height
-                    behavior: 'smooth'
-                });
-            }
-        });
-    });
-
-    // Form submission
-    const contactForm = document.querySelector('.contact-form form');
-    if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Thank you for your message! We will contact you soon.');
-            this.reset();
-        });
-    }
-
-    // ===  Animated counters on homepage  ===============================
+    // === Counter Animation on Scroll ===
     const counters = document.querySelectorAll('.counter');
-    const startCounter = (counter) => {
-        const updateCount = () => {
-            const target = +counter.getAttribute('data-target');
-            const count  = +counter.innerText.replace('+', '');
-            const inc    = Math.ceil(target / 200); // Speed control
 
+    const runCounter = (counter) => {
+        const target = +counter.getAttribute('data-target');
+        const speed = 200;
+        const inc = target / speed;
+
+        const updateCount = () => {
+            const count = +counter.innerText.replace('+', '');
             if (count < target) {
-                counter.innerText = (count + inc) + '+';
+                counter.innerText = Math.ceil(count + inc) + '+';
                 setTimeout(updateCount, 15);
             } else {
                 counter.innerText = target + '+';
@@ -51,116 +30,74 @@ document.addEventListener('DOMContentLoaded', function() {
         updateCount();
     };
 
-    const observer = new IntersectionObserver((entries, observer) => {
+    const counterObserver = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                startCounter(entry.target);
+                runCounter(entry.target);
                 observer.unobserve(entry.target);
             }
         });
-    }, { threshold: 0.5 });
-
-    counters.forEach(counter => {
-        observer.observe(counter);
+    }, {
+        threshold: 0.8
     });
 
-    // ===  Gallery Lightbox =============================================
-    const galleryItems = document.querySelectorAll('.gallery-item img');
-    const lightbox = document.querySelector('.lightbox');
-    const lightboxImg = document.querySelector('.lightbox-content');
-    const closeBtn = document.querySelector('.lightbox .close');
-    const prevBtn = document.querySelector('.lightbox .prev');
-    const nextBtn = document.querySelector('.lightbox .next');
+    counters.forEach(counter => {
+        counterObserver.observe(counter);
+    });
 
-    let currentIndex = 0;
+    // === Consolidated Social Media Button ===
+    const socialToggle = document.querySelector('.social-toggle-btn');
+    const socialContainer = document.querySelector('.social-float-container');
 
-    function showLightbox(index) {
-        currentIndex = index;
-        lightboxImg.src = galleryItems[currentIndex].src;
-        lightbox.style.display = 'flex';
-    }
-
-    function hideLightbox() {
-        lightbox.style.display = 'none';
-    }
-
-    function showNext() {
-        currentIndex = (currentIndex + 1) % galleryItems.length;
-        lightboxImg.src = galleryItems[currentIndex].src;
-    }
-
-    function showPrev() {
-        currentIndex = (currentIndex - 1 + galleryItems.length) % galleryItems.length;
-        lightboxImg.src = galleryItems[currentIndex].src;
-    }
-
-    if (galleryItems.length > 0) {
-        galleryItems.forEach((item, index) => {
-            item.addEventListener('click', () => showLightbox(index));
-        });
-
-        closeBtn.addEventListener('click', hideLightbox);
-        nextBtn.addEventListener('click', showNext);
-        prevBtn.addEventListener('click', showPrev);
-
-        // Close on outside click
-        lightbox.addEventListener('click', (e) => {
-            if (e.target === lightbox) {
-                hideLightbox();
-            }
-        });
-
-        // Keyboard navigation
-        document.addEventListener('keydown', (e) => {
-            if (lightbox.style.display === 'flex') {
-                if (e.key === 'Escape') hideLightbox();
-                if (e.key === 'ArrowRight') showNext();
-                if (e.key === 'ArrowLeft') showPrev();
-            }
+    if (socialToggle && socialContainer) {
+        socialToggle.addEventListener('click', (e) => {
+            e.preventDefault();
+            socialContainer.classList.toggle('active');
         });
     }
-});
-// === Language Switching Logic ===
 
-document.addEventListener('DOMContentLoaded', () => {
-    const langEnBtn = document.getElementById('lang-en');
-    const langArBtn = document.getElementById('lang-ar');
+    // === Gallery Filtering from URL ===
+    const galleryGrid = document.querySelector('.gallery-grid');
 
-    const setLanguage = (language) => {
-        // Set attributes on the html tag
-        document.documentElement.setAttribute('lang', language);
-        document.documentElement.setAttribute('dir', language === 'ar' ? 'rtl' : 'ltr');
+    if (galleryGrid) {
+        const urlParams = new URLSearchParams(window.location.search);
+        const filter = urlParams.get('filter');
 
-        // ** ADD THIS LINE TO UPDATE THE PAGE TITLE **
-        document.title = translations[language].pageTitleHome; // Change 'pageTitleHome' for other pages
-
-        // Update all text elements
-        document.querySelectorAll('[data-key]').forEach(element => {
-            const key = element.getAttribute('data-key');
-            if (translations[language][key]) {
-                element.textContent = translations[language][key];
-            } else {
-                console.error(`Translation key "${key}" not found for language "${language}"`);
-            }
-        });
-        
-        // Update button styles
-        if (language === 'ar') {
-            langArBtn.classList.add('active');
-            langEnBtn.classList.remove('active');
-        } else {
-            langEnBtn.classList.add('active');
-            langArBtn.classList.remove('active');
+        if (filter) {
+            const galleryItems = galleryGrid.querySelectorAll('.gallery-item');
+            galleryItems.forEach(item => {
+                if (item.getAttribute('data-category') === filter) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
         }
+    }
 
-        // Store user preference
-        localStorage.setItem('language', language);
-    };
+    // === Scroll to Top Button Logic ===
+    const scrollToTopBtn = document.querySelector('.scroll-to-top');
 
-    langEnBtn.addEventListener('click', () => setLanguage('en'));
-    langArBtn.addEventListener('click', () => setLanguage('ar'));
-    
-    // Check for saved language on page load
-    const savedLanguage = localStorage.getItem('language') || 'en'; // Default to English
-    setLanguage(savedLanguage);
+    if (scrollToTopBtn) {
+
+        const checkScroll = () => {
+            if (window.scrollY > 300) {
+                scrollToTopBtn.classList.add('show');
+            } else {
+                scrollToTopBtn.classList.remove('show');
+            }
+        };
+
+        checkScroll();
+
+        window.addEventListener('scroll', checkScroll);
+
+        scrollToTopBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    }
 });

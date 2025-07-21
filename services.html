@@ -15,33 +15,40 @@
 <body>
     <header>
         <div class="container">
-                <a href="index.html" class="logo">
-                    <img src="images/logo.png" alt="AL-ABDAA AL-MSHREQ Logo">
-                    <div class="logo-text-group">
-                        <span class="amc">AMC</span>
-                        <div class="divider"></div>
-                        <div class="full-name">
-                            <h1>AL-ABDAA AL-MSHREQ</h1>
-                            <p>Building Contracting L.L.C</p>
-                        </div>
+            <a href="index.html" class="logo">
+                <img src="images/logo.png" alt="AL-ABDAA AL-MSHREQ Logo">
+                <div class="logo-text-group">
+                    <span class="amc">AMC</span>
+                    <div class="divider"></div>
+                    <div class="full-name">
+                    <h1>AL-ABDAA AL-MSHREQ</h1>
+                    <p>Building Contracting L.L.C</p>
                     </div>
-                </a>     <nav>
-                <ul>
+                </div>
+            </a>   
+            <nav>
+            <ul class="main-nav">
                     <li><a href="index.html">Home</a></li>
                     <li><a href="about.html">About Us</a></li>
                     <li><a href="services.html" class="active">Services</a></li>
                     <li><a href="projects.html">Projects</a></li>
                     <li><a href="gallery.html">Gallery</a></li>
                     <li><a href="contact.html">Contact</a></li>
-                    <li><a href="license.html">License</a></li>
-                </ul>
+                    <li><a href="careers.html">Careers</a></li>
+            </ul>
             </nav>
             <div class="mobile-menu"><i class="fas fa-bars"></i></div>
         </div>
-    </header>
+</header>
+
 
     <main>
-<!-- REPLACE the main services section in services.html with this -->
+        <section class="page-header">
+            <div class="container">
+                <h1>Our Services</h1>
+                        <p>We offer a comprehensive range of building contracting services, including general contracting, villa construction, renovation and restoration, construction management, design-build services, green building, civil engineering, and swimming pool construction.</p>
+            </div>
+        </section>
         <section class="light-bg">
             <div class="container">
                 <div class="services-grid">
@@ -50,6 +57,7 @@
                             <i class="fas fa-hard-hat"></i>
                             <h4>General Contracting</h4>
                             <p>Experts in handling large-scale projects with precision.</p>
+
                         </div>
                     </a>
                     <a href="gallery.html?filter=management" class="service-card-link">
@@ -153,7 +161,8 @@
                         <li><a href="services.html">Services</a></li>
                         <li><a href="projects.html">Projects</a></li>
                         <li><a href="gallery.html">Gallery</a></li>
-                        <li><a href="license.html">Trade License</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="careers.html">Careers</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
@@ -168,10 +177,27 @@
             </div>
         </div>
     </footer>
-    <script src="js/main.js"></script>
-    <!-- ADD THIS LINE BEFORE THE CLOSING </body> TAG -->
-    <a href="https://wa.me/971565547397" class="whatsapp-float" target="_blank">
-        <i class="fab fa-whatsapp"></i>
+    <!-- REPLACE the old floating buttons with this new structure in ALL .html files -->
+    <!-- Consolidated Social Media Button -->
+    <div class="social-float-container">
+        <div class="social-links-wrapper">
+        <a href="https://wa.me/971565547397" class="social-link whatsapp-link" target="_blank" aria-label="WhatsApp">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+        <a href="https://www.linkedin.com/company/al-abdaa-al-mshreq/" class="social-link linkedin-link" target="_blank" aria-label="LinkedIn">
+                <i class="fab fa-linkedin-in"></i>
+            </a>
+        <a href="https://www.facebook.com/ALABDAAALMSHREQ/" class="social-link facebook-link" target="_blank" aria-label="Facebook">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+        <a href="https://www.instagram.com/al_abdaa_al_mshreq/" class="social-link instagram-link" target="_blank" aria-label="Instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+        </div>
+    <a href="#" class="social-toggle-btn">
+        <i class="fas fa-share-alt"></i>
     </a>
+</div>
+<script src="js/main.js"></script>
 </body>
 </html>

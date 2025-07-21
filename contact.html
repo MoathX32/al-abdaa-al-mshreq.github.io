@@ -15,31 +15,31 @@
 <body>
     <header>
         <div class="container">
-                <a href="index.html" class="logo">
-                    <img src="images/logo.png" alt="AL-ABDAA AL-MSHREQ Logo">
-                    <div class="logo-text-group">
-                        <span class="amc">AMC</span>
-                        <div class="divider"></div>
-                        <div class="full-name">
-                            <h1 data-key="companyName">AL-ABDAA AL-MSHREQ</h1>
-                            <p data-key="companySub">Building Contracting L.L.C</p>
-                        </div>
+            <a href="index.html" class="logo">
+                <img src="images/logo.png" alt="AL-ABDAA AL-MSHREQ Logo">
+                <div class="logo-text-group">
+                    <span class="amc">AMC</span>
+                    <div class="divider"></div>
+                    <div class="full-name">
+                    <h1>AL-ABDAA AL-MSHREQ</h1>
+                    <p>Building Contracting L.L.C</p>
                     </div>
-                </a>     <nav>
-                <ul>
+                </div>
+            </a>   
+            <nav>
+            <ul class="main-nav">
                     <li><a href="index.html">Home</a></li>
                     <li><a href="about.html">About Us</a></li>
                     <li><a href="services.html">Services</a></li>
                     <li><a href="projects.html">Projects</a></li>
                     <li><a href="gallery.html">Gallery</a></li>
-                    <li><a href="contact.html" class="active">Contact</a></li>
-                    <li><a href="license.html">License</a></li>
-                </ul>
+                    <li><a href="contact.html"class="active">Contact</a></li>
+                    <li><a href="careers.html">Careers</a></li>
+            </ul>
             </nav>
             <div class="mobile-menu"><i class="fas fa-bars"></i></div>
         </div>
-    </header>
-
+</header>
     <main>
         <section class="page-header">
             <div class="container">
@@ -47,7 +47,6 @@
                 <p>We're here to help and answer any question you might have. We look forward to hearing from you.</p>
             </div>
         </section>
-
         <section class="light-bg">
             <div class="container">
                 <div class="contact-grid">
@@ -59,14 +58,13 @@
                         </div>
                         <div class="info-item">
                             <i class="fas fa-envelope"></i>
-                             <div><h4>Email</h4><p><a href="mailto:abdaamshreq@gmail.com">abdaamshreq@gmail.com</a></p></div>
+                            <div><h4>Email</h4><p><a href="mailto:abdaamshreq@gmail.com">abdaamshreq@gmail.com</a></p></div>
                         </div>
                         <div class="info-item">
                             <i class="fas fa-map-marker-alt"></i>
-                             <div><h4>Address</h4><p>Dubai, Al Qusais Industrial Area 2<br>Damascus Street, Al Fahad 4, 349</p></div>
+                            <div><h4>Address</h4><p>Dubai, Al Qusais Industrial Area 2<br>Damascus Street, Al Fahad 4, 349</p></div>
                         </div>
                     </div>
-
                     <div class="contact-form">
                         <h2>Send Us a Message</h2>
                         <form action="#" method="POST">
@@ -86,13 +84,12 @@
                         </form>
                     </div>
                 </div>
-                 <div class="map">
+                <div class="map">
                     <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d2145.1930180442305!2d55.38698089089959!3d25.278313426654414!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sae!4v1752311389303!5m2!1sen!2sae" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                 </div>
             </div>
         </section>
     </main>
-
     <footer>
         <div class="container">
             <div class="footer-content">
@@ -112,7 +109,8 @@
                         <li><a href="services.html">Services</a></li>
                         <li><a href="projects.html">Projects</a></li>
                         <li><a href="gallery.html">Gallery</a></li>
-                        <li><a href="license.html">Trade License</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="careers.html">Careers</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
@@ -127,10 +125,27 @@
             </div>
         </div>
     </footer>
-    <script src="js/main.js"></script>
-    <!-- ADD THIS LINE BEFORE THE CLOSING </body> TAG -->
-    <a href="https://wa.me/971565547397" class="whatsapp-float" target="_blank">
-        <i class="fab fa-whatsapp"></i>
+    <!-- REPLACE the old floating buttons with this new structure in ALL .html files -->
+    <!-- Consolidated Social Media Button -->
+    <div class="social-float-container">
+        <div class="social-links-wrapper">
+        <a href="https://wa.me/971565547397" class="social-link whatsapp-link" target="_blank" aria-label="WhatsApp">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+        <a href="https://www.linkedin.com/company/al-abdaa-al-mshreq/" class="social-link linkedin-link" target="_blank" aria-label="LinkedIn">
+                <i class="fab fa-linkedin-in"></i>
+            </a>
+        <a href="https://www.facebook.com/ALABDAAALMSHREQ/" class="social-link facebook-link" target="_blank" aria-label="Facebook">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+        <a href="https://www.instagram.com/al_abdaa_al_mshreq/" class="social-link instagram-link" target="_blank" aria-label="Instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+        </div>
+    <a href="#" class="social-toggle-btn">
+        <i class="fas fa-share-alt"></i>
     </a>
+</div>
+<script src="js/main.js"></script>
 </body>
 </html>

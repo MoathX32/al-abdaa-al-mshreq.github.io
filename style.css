@@ -1,0 +1,110 @@
+/* info: style.css - Reviewing and adjusting styles for visibility and positioning */
+```css style.css
+```css
+/* Floating Social Media Buttons */
+/* WhatsApp Button */
+.whatsapp-float {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    width: 60px;
+    height: 60px;
+    background-color: #25d366;
+    color: #FFF;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.25);
+    z-index: 99;
+    transition: transform 0.3s ease;
+}
+
+.whatsapp-float i {
+    margin-top: 15px;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1);
+}
+
+/* Consolidated Social Media Button Container */
+.social-float-container {
+    position: fixed;
+    bottom: 120px; /* Position above WhatsApp */
+    right: 40px; /* Align with WhatsApp button */
+    z-index: 100; /* Ensure it's above other elements */
+}
+
+/* Toggle Button */
+.social-toggle-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    background-color: var(--accent-color);
+    color: #FFF;
+    border-radius: 50%;
+    font-size: 24px;
+    cursor: pointer;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.25);
+    transition: transform 0.3s ease;
+}
+
+.social-toggle-btn:hover {
+    transform: scale(1.1);
+    background-color: #a88a53;
+}
+
+/* Social Links Wrapper */
+.social-links-wrapper {
+    position: absolute;
+    bottom: 0;
+    right: 70px; /* Space to the right of the toggle button */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 10px;
+    transform: translateX(100%); /* Initially hidden */
+    transition: transform 0.3s ease-in-out; /* Added ease-in-out for smoother animation */
+}
+
+/* Active State - Show Links */
+.social-float-container.active .social-links-wrapper {
+    transform: translateX(0); /* Show the links */
+}
+
+/* Individual Social Links */
+.social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    color: #FFF;
+    font-size: 18px;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.25);
+    transition: transform 0.3s ease;
+}
+
+.social-link:hover {
+    transform: scale(1.1);
+}
+
+/* Specific Social Media Colors */
+.linkedin-link {
+    background-color: #0077B5;
+}
+
+.facebook-link {
+    background-color: #3b5998;
+}
+
+.instagram-link {
+    background-color: #E1306C;
+}
+
+.whatsapp-link {
+    background-color: #25d366;
+}
