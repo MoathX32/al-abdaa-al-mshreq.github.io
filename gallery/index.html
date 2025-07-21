@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery - AL-ABDAA AL-MSHREQ</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="images/logo.png" alt="AL-ABDAA AL-MSHREQ Logo">
+                <div class="logo-text-group">
+                    <span class="amc">AMC</span>
+                    <div class="divider"></div>
+                    <div class="full-name">
+                        <h1>AL-ABDAA AL-MSHREQ</h1>
+                        <p>Building Contracting L.L.C</p>
+                    </div>
+                </div>
+            </a>
+            <nav>
+                <ul class="main-nav">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="/about/">About Us</a></li>
+                    <li><a href="/services/">Services</a></li>
+                    <li><a href="/projects/">Projects</a></li>
+                    <li><a href="/gallery/" class="active">Gallery</a></li>
+                    <li><a href="/contact/">Contact</a></li>
+                    <li><a href="/careers/">Careers</a></li>
+                </ul>
+            </nav>
+            <div class="mobile-menu"><i class="fas fa-bars"></i></div>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <h1>Our Project Gallery</h1>
+                <p>A visual journey through our finest work in construction and renovation.</p>
+            </div>
+        </section>
+
+        <section class="light-bg">
+            <div class="container">
+                <!-- REPLACE the gallery-grid div in gallery.html with this -->
+                <div class="gallery-grid">
+                    <!-- Villa Construction Images -->
+                    <div class="gallery-item" data-category="villa"><img src="images/gallery/villa-1.jpg"
+                            alt="Villa Exterior"></div>
+                    <div class="gallery-item" data-category="villa"><img src="images/gallery/villa-11.jpg"
+                            alt="Villa Exterior"></div>
+                    <div class="gallery-item" data-category="villa"><img src="images/gallery/villa-111.jpg"
+                            alt="Villa Exterior"></div>
+                    <div class="gallery-item" data-category="villa"><img src="images/gallery/villa-1111.jpg"
+                            alt="Villa Exterior"></div>
+                    <div class="gallery-item" data-category="villa"><img src="images/gallery/villa-11111.jpg"
+                            alt="Villa Exterior"></div>
+                    <div class="gallery-item" data-category="villa"><img src="images/gallery/villa-2.jpg"
+                            alt="Villa Gate"></div>
+                    <div class="gallery-item" data-category="villa"><img src="images/gallery/villa-22.jpg"
+                            alt="Villa Gate"></div>
+                    <div class="gallery-item" data-category="villa"><img src="images/gallery/villa-3.jpg"
+                            alt="Villa Under Construction"></div>
+                    <div class="gallery-item" data-category="villa"><img src="images/gallery/villa-33.jpg"
+                            alt="Villa Under Construction"></div>
+                    <div class="gallery-item" data-category="villa"><img src="images/gallery/villa-4.jpg"
+                            alt="Modern Villa Design"></div>
+
+                    <!-- Renovation & Restoration Images -->
+                    <div class="gallery-item" data-category="renovation"><img src="images/gallery/renewal-1.jpg"
+                            alt="Waterproofing work"></div>
+                    <div class="gallery-item" data-category="renovation"><img src="images/gallery/renewal-2.jpg"
+                            alt="Plastering work"></div>
+
+                    <!-- Electricity Project Images -->
+                    <div class="gallery-item" data-category="electrical"><img src="images/gallery/electric-1.jpg"
+                            alt="Electrical Panel"></div>
+                    <div class="gallery-item" data-category="electrical"><img src="images/gallery/electric-2.jpg"
+                            alt="Complex Wiring"></div>
+
+                    <!-- General Contracting & Concrete Images -->
+                    <div class="gallery-item" data-category="contracting"><img src="images/gallery/concrete-1.jpg"
+                            alt="Concrete Foundation"></div>
+                    <div class="gallery-item" data-category="contracting"><img src="images/gallery/concrete-2.jpg"
+                            alt="Reinforcement Work"></div>
+
+                    <!-- Swimming Pool Images -->
+                    <div class="gallery-item" data-category="pool"><img src="images/gallery/pool-1.jpg"
+                            alt="Pool construction"></div>
+                    <div class="gallery-item" data-category="pool"><img src="images/gallery/pool-2.jpg"
+                            alt="Pool reinforcement"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Lightbox Structure -->
+        <div class="lightbox">
+            <button class="close"><i class="fas fa-times"></i></button>
+            <button class="prev"><i class="fas fa-chevron-left"></i></button>
+            <button class="next"><i class="fas fa-chevron-right"></i></button>
+            <img src="" alt="Enlarged View" class="lightbox-content">
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>AL-ABDAA AL-MSHREQ</h3>
+                    <p>Building Contracting L.L.C</p>
+                    <!-- ADD THIS DOWNLOAD BUTTON -->
+                    <a href="documents/company-profile.pdf" download="AMC-Company-Profile.pdf"
+                        class="footer-download-btn">
+                        <img src="images/logo.png" alt="AMC Logo Icon">
+                        <span>Download Profile</span>
+                    </a>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="projects.html">Projects</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="careers.html">Careers</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <p><i class="fas fa-phone"></i> +971 56 554 7397</p>
+                    <p><i class="fas fa-envelope"></i> abdaamshreq@gmail.com</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Dubai, Al Qusais Industrial Area 2, Damascus Street, Al
+                        Fahad 4, 349</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2024 AL-ABDAA AL-MSHREQ Building Contracting L.L.C. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <!-- REPLACE the old floating buttons with this new structure in ALL .html files -->
+    <!-- Consolidated Social Media Button -->
+    <div class="social-float-container">
+        <div class="social-links-wrapper">
+            <a href="https://wa.me/971565547397" class="social-link whatsapp-link" target="_blank"
+                aria-label="WhatsApp">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+            <a href="https://www.linkedin.com/company/al-abdaa-al-mshreq/" class="social-link linkedin-link"
+                target="_blank" aria-label="LinkedIn">
+                <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="https://www.facebook.com/ALABDAAALMSHREQ/" class="social-link facebook-link" target="_blank"
+                aria-label="Facebook">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://www.instagram.com/al_abdaa_al_mshreq/" class="social-link instagram-link" target="_blank"
+                aria-label="Instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+        </div>
+        <a href="#" class="social-toggle-btn">
+            <i class="fas fa-share-alt"></i>
+        </a>
+    </div>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
