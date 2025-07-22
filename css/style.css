@@ -208,7 +208,7 @@ nav ul li a.active {
     background: linear-gradient(rgba(255, 255, 255, 0.304), rgba(255, 255, 255,0.304)), url('../images/construction-bg.jpg') no-repeat center center/cover;
     color: var(--secondary-color);
     text-align: left;
-    padding: 80px 0;
+    padding: 160px 0;
 }
 
 .hero h1 {
