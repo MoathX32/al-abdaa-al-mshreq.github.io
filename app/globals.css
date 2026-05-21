@@ -1,0 +1,124 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-primary: #172a59;
+  --color-brand-primary-deep: #0e1c40;
+  --color-brand-accent: #ba9b64;
+  --color-brand-accent-hover: #a88a53;
+  --color-brand-dark: #222222;
+  --color-brand-light: #f8f9fa;
+  --color-brand-text: #333333;
+
+  --font-display: var(--font-playfair), Georgia, "Times New Roman", serif;
+  --font-body: var(--font-montserrat), "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+
+  --shadow-elevated: 0 20px 50px -20px rgba(23, 42, 89, 0.35);
+  --shadow-card: 0 12px 30px -12px rgba(0, 0, 0, 0.18);
+}
+
+:root {
+  --header-height: 84px;
+  color-scheme: light;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--header-height);
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--color-brand-text);
+  background: #ffffff;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  color: var(--color-brand-primary);
+  letter-spacing: -0.01em;
+}
+
+[lang="ar"] body,
+[dir="rtl"] body {
+  font-family: "Cairo", "Tajawal", var(--font-body);
+}
+
+[lang="ar"] h1,
+[lang="ar"] h2,
+[lang="ar"] h3,
+[lang="ar"] h4,
+[dir="rtl"] h1,
+[dir="rtl"] h2,
+[dir="rtl"] h3,
+[dir="rtl"] h4 {
+  font-family: "Amiri", "Cairo", serif;
+}
+
+@layer utilities {
+  .container-pad {
+    @apply mx-auto w-full max-w-7xl px-5 sm:px-8 lg:px-12;
+  }
+
+  .heading-eyebrow {
+    @apply inline-block text-xs font-semibold uppercase tracking-[0.3em] text-brand-accent;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-none border border-brand-accent bg-brand-accent px-7 py-3.5 text-sm font-semibold uppercase tracking-[0.18em] text-white transition-all duration-300 hover:bg-brand-accent-hover hover:border-brand-accent-hover hover:-translate-y-0.5 hover:shadow-lg;
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center justify-center gap-2 rounded-none border border-white/70 bg-transparent px-7 py-3.5 text-sm font-semibold uppercase tracking-[0.18em] text-white transition-all duration-300 hover:bg-white hover:text-brand-primary;
+  }
+
+  .btn-dark {
+    @apply inline-flex items-center justify-center gap-2 rounded-none border border-brand-primary bg-brand-primary px-7 py-3.5 text-sm font-semibold uppercase tracking-[0.18em] text-white transition-all duration-300 hover:bg-brand-primary-deep hover:-translate-y-0.5;
+  }
+
+  .parallax-bg {
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  @media (max-width: 768px) {
+    .parallax-bg {
+      background-attachment: scroll;
+    }
+  }
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+@keyframes marquee-rtl {
+  from { transform: translateX(-50%); }
+  to   { transform: translateX(0); }
+}
+
+.marquee-track {
+  animation: marquee 35s linear infinite;
+}
+
+[dir="rtl"] .marquee-track {
+  animation: marquee-rtl 35s linear infinite;
+}
+
+@keyframes fade-in-up {
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: var(--color-brand-primary) !important;
+}
+
+.swiper-pagination-bullet-active {
+  background: var(--color-brand-accent) !important;
+}
